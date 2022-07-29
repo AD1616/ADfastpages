@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: The first post!
 categories: [markdown]
-title: An Example Markdown Post
+title: First Post to ADfastpages
 ---
 # Welcome to this website! There will be many more posts in the future.
 
