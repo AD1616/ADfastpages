@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Title",
-            "content": "public class HelloWorld { public static void main(String[] args) { System.out.println(&quot;Hello World!&quot;); } } HelloWorld.main(null); . Failed to start the Kernel. The &#39;python3912jvsc74a57bd03f8d10024867a250336bfbe75eb50df6cba1106adc88e43cc75a37127da2cf47&#39; kernel is not available. Please pick another suitable kernel instead, or install that kernel. View Jupyter &lt;a href=&#39;command:jupyter.viewOutput&#39;&gt;log&lt;/a&gt; for further details. .",
+            "content": "public class HelloWorld { public static void main(String[] args) { System.out.println(&quot;Hello World!&quot;); } } HelloWorld.main(null); . Hello World! . System.out.println(&quot;hello&quot;) . hello .",
             "url": "https://ad1616.github.io/ADfastpages/2022/07/28/java_test.html",
             "relUrl": "/2022/07/28/java_test.html",
             "date": " • Jul 28, 2022"
