@@ -2,7 +2,7 @@
   
     
         "post0": {
-            "title": "Title",
+            "title": "Hello Java Jupyter Kernel",
             "content": "public class HelloWorld { public static void main(String[] args) { System.out.println(&quot;Hello World!&quot;); } } HelloWorld.main(null); . Hello World! . System.out.println(&quot;hello&quot;) . hello .",
             "url": "https://ad1616.github.io/ADfastpages/2022/07/28/java_test.html",
             "relUrl": "/2022/07/28/java_test.html",
