@@ -13,7 +13,7 @@
   
     
         ,"post1": {
-            "title": "Title",
+            "title": "Hello Bash Jupyter Kernel",
             "content": "ls . 2020-02-20-test.ipynb README.md 2022-07-21-neo4j_intro.ipynb ghtop_images 2022-07-28-java_test.ipynb my_icons 2022-08-19-bash_test.ipynb . cd ~ . ls . Applications JupyterNotebooks UnityProjects CustomApps Library miniforge3 Desktop Movies opt Documents Music tensorflow-env Downloads Pictures GithubRepositories Public .",
             "url": "https://ad1616.github.io/ADfastpages/2022/08/19/bash_test.html",
             "relUrl": "/2022/08/19/bash_test.html",
