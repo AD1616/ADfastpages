@@ -16,7 +16,7 @@ This is a website that makes use of a tool called fastpages. This tool allows fo
 
 | Notebooks | Posts |
 |-|-|
-| Link | Link |
+|  |  |
 
 
 
