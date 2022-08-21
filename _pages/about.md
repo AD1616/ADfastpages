@@ -1,11 +1,9 @@
----
-layout: page
-title: About Me
-permalink: /about/
----
+# Who am I?
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+At the time of creating this site, I'm a senior at Del Norte High School.
+
+# What's this for?
+
+This site is part of my Computer Science A curriculum. But I might use it for something like a personal blog.
 
 
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
