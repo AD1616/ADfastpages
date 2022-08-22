@@ -4,8 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-# Who am I?
-
 At the time of creating this site, I'm a senior at Del Norte High School.
 
 # What's this for?
