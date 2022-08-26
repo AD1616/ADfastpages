@@ -47,7 +47,7 @@
     
         ,"post4": {
             "title": "Hello Bash Jupyter Kernel",
-            "content": "ls . 2020-02-20-test.ipynb README.md 2022-07-21-neo4j_intro.ipynb ghtop_images 2022-07-28-java_test.ipynb my_icons 2022-08-19-bash_test.ipynb . cd ~ . ls . Applications JupyterNotebooks UnityProjects CustomApps Library miniforge3 Desktop Movies opt Documents Music tensorflow-env Downloads Pictures GithubRepositories Public .",
+            "content": "ls . 2020-02-20-test.ipynb 2022-08-24-CoulombLaw.ipynb 2022-07-21-neo4j_intro.ipynb 2022-08-25-VerifyEnvironment.ipynb 2022-07-28-java_test.ipynb README.md 2022-08-19-JavaAnatomy.ipynb ghtop_images 2022-08-19-bash_test.ipynb my_icons 2022-08-21-JavaHouse.ipynb . cd ~ . ls . Applications JupyterNotebooks UnityProjects CustomApps Library miniforge3 Desktop Movies opt Documents Music tensorflow-env Downloads Pictures GithubRepositories Public .",
             "url": "https://ad1616.github.io/ADfastpages/bash/2022/08/19/bash_test.html",
             "relUrl": "/bash/2022/08/19/bash_test.html",
             "date": " • Aug 19, 2022"
@@ -116,6 +116,17 @@
 
   
       ,"page1": {
+          "title": "Helpful CB Things",
+          "content": "Stuff for cb . Unit 1: Primitive Types . Example Notebook .",
+          "url": "https://ad1616.github.io/ADfastpages/cb/",
+          "relUrl": "/cb/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "About Me",
           "content": "At the time of creating this site, I’m a senior at Del Norte High School. . What’s this for? . This site is part of my Computer Science A curriculum. But I might use it for something like a personal blog. .",
           "url": "https://ad1616.github.io/ADfastpages/about/",
@@ -126,7 +137,7 @@
   
 
   
-      ,"page2": {
+      ,"page3": {
           "title": "",
           "content": "Sahil’s (AD1616) Fastpages Site . . Hey, this is Sahil. Welcome to my website! . . Posts .",
           "url": "https://ad1616.github.io/ADfastpages/",
@@ -156,7 +167,7 @@
   
 
   
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://ad1616.github.io/ADfastpages/robots.txt",
