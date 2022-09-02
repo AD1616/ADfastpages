@@ -4,9 +4,9 @@
         "post0": {
             "title": "Python Verify Environment",
             "content": "Introduction . In a bash jupyter kernel, you cannot take in input from the user. So, to verify installation of user inputted packages, this notebook utilizes os.system. . import os . package = input(&quot;Enter conda package: &quot;) command = &quot;conda list &quot; + str(package) os.system(command) . Enter conda package: jupyter # packages in environment at /Users/sahilsamar/opt/anaconda3/envs/myenv: # # Name Version Build Channel jupyter 1.0.0 py310hca03da5_8 jupyter_client 7.2.2 py310hca03da5_0 jupyter_console 6.4.3 pyhd3eb1b0_0 jupyter_core 4.10.0 py310hca03da5_0 jupyter_server 1.18.1 py310hca03da5_0 jupyterlab 3.4.4 py310hca03da5_0 jupyterlab_pygments 0.1.2 py_0 jupyterlab_server 2.12.0 py310hca03da5_0 jupyterlab_widgets 1.0.0 pyhd3eb1b0_1 neo4jupyter 0.2.0 pypi_0 pypi . 0 .",
-            "url": "https://ad1616.github.io/ADfastpages/python/2022/09/01/pyVerifyEnvironment.html",
-            "relUrl": "/python/2022/09/01/pyVerifyEnvironment.html",
-            "date": " • Sep 1, 2022"
+            "url": "https://ad1616.github.io/ADfastpages/python/2022/08/25/pyVerifyEnvironment.html",
+            "relUrl": "/python/2022/08/25/pyVerifyEnvironment.html",
+            "date": " • Aug 25, 2022"
         }
         
     
