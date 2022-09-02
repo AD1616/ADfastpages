@@ -3,24 +3,37 @@ package JavaCode;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class game extends JPanel {
+public class Game extends JPanel {
 
+	Controller controller = new Controller(this);
 
-	int x = 0;
-	int y = 330;
-	int xa = 1;
+	public Game() {
+		addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
 
-	private void moveBall() {
-		if (x + xa < 0)
-			xa = 1;
-		if (x + xa > getWidth() - 30)
-			xa = -1;
-		
-		x = x + xa;
+			@Override
+			public void keyReleased(KeyEvent e) {
+				controller.keyReleased(e);
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				controller.keyPressed(e);
+			}
+		});
+		setFocusable(true);
+	}
+	
+	private void move() {
+		controller.move();
 	}
 
 	@Override
@@ -29,20 +42,19 @@ public class game extends JPanel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
-		g.fillOval(x, y, 30, 30);
-
+		controller.paint(g2d);
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new JFrame("Mini Tennis");
-		game game = new game();
+		Game game = new Game();
 		frame.add(game);
 		frame.setSize(300, 400);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		while (true) {
-			game.moveBall();
+			game.move();
 			game.repaint();
 			Thread.sleep(10);
 		}
