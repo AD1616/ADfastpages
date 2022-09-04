@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>This blog shows up how to set up a basic game in Java! | AD1616 fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="This blog shows up how to set up a basic game in Java!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My personal blog for notebooks." />
+<meta property="og:description" content="My personal blog for notebooks." />
+<link rel="canonical" href="https://ad1616.github.io/ADfastpages/2022/09/02/JavaGame.html" />
+<meta property="og:url" content="https://ad1616.github.io/ADfastpages/2022/09/02/JavaGame.html" />
+<meta property="og:site_name" content="AD1616 fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-02T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="This blog shows up how to set up a basic game in Java!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-02T00:00:00-05:00","datePublished":"2022-09-02T00:00:00-05:00","description":"My personal blog for notebooks.","headline":"This blog shows up how to set up a basic game in Java!","mainEntityOfPage":{"@type":"WebPage","@id":"https://ad1616.github.io/ADfastpages/2022/09/02/JavaGame.html"},"url":"https://ad1616.github.io/ADfastpages/2022/09/02/JavaGame.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ADfastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ad1616.github.io/ADfastpages/feed.xml" title="AD1616 fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/ADfastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ADfastpages/">AD1616 fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ADfastpages/cb/">Helpful CB Things</a><a class="page-link" href="/ADfastpages/about/">About Me</a><a class="page-link" href="/ADfastpages/search/">Search</a><a class="page-link" href="/ADfastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">This blog shows up how to set up a basic game in Java!</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-02T00:00:00-05:00" itemprop="datePublished">
+        Sep 2, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/AD1616/ADfastpages/tree/master/_notebooks/2022-09-02-JavaGame.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/ADfastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/AD1616/ADfastpages/master?filepath=_notebooks%2F2022-09-02-JavaGame.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ADfastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/AD1616/ADfastpages/blob/master/_notebooks/2022-09-02-JavaGame.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ADfastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FAD1616%2FADfastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-09-02-JavaGame.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/ADfastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-02-JavaGame.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Game-Class">The Game Class<a class="anchor-link" href="#The-Game-Class"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// My package is called JavaCode</span>
+<span class="kn">package</span> <span class="nn">JavaCode</span><span class="p">;</span>
+
+<span class="c1">// Necessary imports</span>
+<span class="kn">import</span> <span class="nn">java.awt.Graphics</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Graphics2D</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.RenderingHints</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.KeyEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.KeyListener</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JPanel</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JOptionPane</span><span class="p">;</span>
+
+<span class="c1">// Inheriting from JPanel using extends JPanel</span>
+<span class="c1">// This way we can override the paint method. This is important so that the screen is cleared before it is repainted. Otherwise, we can&#39;t see movement!</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Game</span> <span class="kd">extends</span> <span class="n">JPanel</span> <span class="p">{</span>
+
+	<span class="c1">// Instantiating the player (ball)</span>
+	<span class="n">Controller</span> <span class="n">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Controller</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+	<span class="c1">// Instantiating the ground</span>
+	<span class="n">Ground</span> <span class="n">ground</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ground</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+
+	<span class="kd">public</span> <span class="nf">Game</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// Adding key listener to constructor. </span>
+		<span class="c1">// This allows for user input.</span>
+		<span class="n">addKeyListener</span><span class="p">(</span><span class="k">new</span> <span class="n">KeyListener</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nd">@Override</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyTyped</span><span class="p">(</span><span class="n">KeyEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+			<span class="p">}</span>
+
+			<span class="nd">@Override</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyReleased</span><span class="p">(</span><span class="n">KeyEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">controller</span><span class="p">.</span><span class="na">keyReleased</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+			<span class="p">}</span>
+
+			<span class="nd">@Override</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyPressed</span><span class="p">(</span><span class="n">KeyEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">controller</span><span class="p">.</span><span class="na">keyPressed</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">});</span>
+		<span class="n">setFocusable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="c1">// Game loop, simply calling the method for the player to move.</span>
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">controller</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Overriding the paint method.</span>
+	<span class="c1">// Super.paint is needed since we repaint every 10 miliseconds.</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">paint</span><span class="p">(</span><span class="n">Graphics</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">super</span><span class="p">.</span><span class="na">paint</span><span class="p">(</span><span class="n">g</span><span class="p">);</span>
+		<span class="n">Graphics2D</span> <span class="n">g2d</span> <span class="o">=</span> <span class="p">(</span><span class="n">Graphics2D</span><span class="p">)</span> <span class="n">g</span><span class="p">;</span>
+		<span class="n">g2d</span><span class="p">.</span><span class="na">setRenderingHint</span><span class="p">(</span><span class="n">RenderingHints</span><span class="p">.</span><span class="na">KEY_ANTIALIASING</span><span class="p">,</span>
+				<span class="n">RenderingHints</span><span class="p">.</span><span class="na">VALUE_ANTIALIAS_ON</span><span class="p">);</span>
+		<span class="c1">// Painting the ground and the player.</span>
+		<span class="n">controller</span><span class="p">.</span><span class="na">paint</span><span class="p">(</span><span class="n">g2d</span><span class="p">);</span>
+		<span class="n">ground</span><span class="p">.</span><span class="na">paint</span><span class="p">(</span><span class="n">g2d</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Simple Game Over screen</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">gameOver</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">JOptionPane</span><span class="p">.</span><span class="na">showMessageDialog</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s">&quot;Game Over&quot;</span><span class="p">,</span> <span class="s">&quot;Game Over&quot;</span><span class="p">,</span> <span class="n">JOptionPane</span><span class="p">.</span><span class="na">YES_NO_OPTION</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="n">ABORT</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Creating the JFrame</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">InterruptedException</span> <span class="p">{</span>
+		<span class="n">JFrame</span> <span class="n">frame</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JFrame</span><span class="p">(</span><span class="s">&quot;ADfastpages Game&quot;</span><span class="p">);</span>
+		<span class="c1">// New Game Object</span>
+		<span class="n">Game</span> <span class="n">game</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Game</span><span class="p">();</span>
+		<span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+		<span class="n">frame</span><span class="p">.</span><span class="na">setSize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+		<span class="n">frame</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+		<span class="n">frame</span><span class="p">.</span><span class="na">setDefaultCloseOperation</span><span class="p">(</span><span class="n">JFrame</span><span class="p">.</span><span class="na">EXIT_ON_CLOSE</span><span class="p">);</span>
+		
+		<span class="c1">// The game loop. Causes the progression of things in the game.</span>
+		<span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">game</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+			<span class="n">game</span><span class="p">.</span><span class="na">repaint</span><span class="p">();</span>
+			<span class="c1">// Things aren&#39;t updated every frame. They are updated every 10 ms.</span>
+			<span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Controller-Class">The Controller Class<a class="anchor-link" href="#The-Controller-Class"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">JavaCode</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.awt.Graphics2D</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.KeyEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Rectangle</span><span class="p">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Controller</span> <span class="p">{</span>
+	<span class="c1">// x and y are used to locate the player in 2D space</span>
+	<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+	<span class="c1">// vx and vy are used to move the player around in certain increments.</span>
+	<span class="kt">int</span> <span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="c1">// The dimensions of the player. These remain constant.</span>
+	<span class="c1">// We need this for a hitbox.</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="n">Game</span> <span class="n">game</span><span class="p">;</span>
+
+	<span class="c1">// Creating an obstacle object here. </span>
+	<span class="c1">// We do it in this class since obstacles should spawn relative to the player.</span>
+	<span class="n">Obstacle</span> <span class="n">obstacle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Obstacle</span><span class="p">(</span><span class="n">game</span><span class="p">);</span>
+
+
+	<span class="kd">public</span> <span class="nf">Controller</span><span class="p">(</span><span class="n">Game</span> <span class="n">game</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// This object is instantiated in the game class, so that the controller can contain a reference to the game state.</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">game</span><span class="o">=</span> <span class="n">game</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Method to move the player</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// Making sure we move within the boundaries.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">vx</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">vx</span> <span class="o">&lt;</span> <span class="n">game</span><span class="p">.</span><span class="na">getWidth</span><span class="p">()</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+			<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">vx</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">vy</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">vy</span> <span class="o">&lt;</span> <span class="n">game</span><span class="p">.</span><span class="na">getHeight</span><span class="p">()</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">vy</span><span class="p">;</span>
+		
+		<span class="c1">// Detecting collision so that the game can end. </span>
+		<span class="c1">// References the Game Over method contained in the game class.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">collisionObstacle</span><span class="p">())</span> <span class="p">{</span>
+			<span class="n">game</span><span class="p">.</span><span class="na">gameOver</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="c1">// Implementing realistic ground.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">game</span><span class="p">.</span><span class="na">getHeight</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">collisionGround</span><span class="p">())</span> <span class="p">{</span>
+				<span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="p">{</span>
+			<span class="c1">// Stopping player if it hits the ground.</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">collisionGround</span><span class="p">())</span> <span class="p">{</span>
+				<span class="n">vy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="p">{</span>
+				<span class="n">vy</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+			<span class="p">}</span>
+
+		<span class="p">}</span>
+
+	<span class="p">}</span>
+
+	<span class="c1">// The paint method needs to paint both the player, as well as call the obstacle paint method to paint the obstacle.</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">paint</span><span class="p">(</span><span class="n">Graphics2D</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">g</span><span class="p">.</span><span class="na">fillOval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">);</span>
+		<span class="n">obstacle</span><span class="p">.</span><span class="na">paint</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+	<span class="p">}</span>
+
+	<span class="c1">// Creating a hitbox for the player.</span>
+	<span class="kd">public</span> <span class="n">Rectangle</span> <span class="nf">getBounds</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Making sure the player doesn&#39;t move without key being pressed.</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyReleased</span><span class="p">(</span><span class="n">KeyEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">vx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Input movement</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyPressed</span><span class="p">(</span><span class="n">KeyEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">// A and D move the player side to side.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKeyCode</span><span class="p">()</span> <span class="o">==</span> <span class="n">KeyEvent</span><span class="p">.</span><span class="na">VK_A</span><span class="p">)</span>
+			<span class="n">vx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKeyCode</span><span class="p">()</span> <span class="o">==</span> <span class="n">KeyEvent</span><span class="p">.</span><span class="na">VK_D</span><span class="p">)</span>
+			<span class="n">vx</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+		<span class="c1">// Jump functionality.</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">vy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getKeyCode</span><span class="p">()</span> <span class="o">==</span> <span class="n">KeyEvent</span><span class="p">.</span><span class="na">VK_SPACE</span><span class="p">)</span>
+				<span class="k">do</span> <span class="p">{</span>
+					<span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+				<span class="p">}</span> 
+				<span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">);</span>
+				<span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+		<span class="p">}</span>
+
+	<span class="p">}</span>
+
+	<span class="c1">// Method to detect collision with the ground.</span>
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">collisionGround</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">game</span><span class="p">.</span><span class="na">ground</span><span class="p">.</span><span class="na">getBounds</span><span class="p">().</span><span class="na">intersects</span><span class="p">(</span><span class="n">getBounds</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Separate method to detect collision with an obstacle.</span>
+	<span class="c1">// Needed since collision with different things should cause different results. </span>
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">collisionObstacle</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">obstacle</span><span class="p">.</span><span class="na">getBounds</span><span class="p">().</span><span class="na">intersects</span><span class="p">(</span><span class="n">getBounds</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	
+
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Obstacle-Class">The Obstacle Class<a class="anchor-link" href="#The-Obstacle-Class"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">JavaCode</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.awt.Graphics2D</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Rectangle</span><span class="p">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Obstacle</span> <span class="p">{</span>
+
+	<span class="c1">// Rererence to the game object.</span>
+	<span class="kd">private</span> <span class="n">Game</span> <span class="n">game</span><span class="p">;</span>
+	<span class="c1">// Dimensions for obstacle hitbox.</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+	<span class="c1">// Updating x position to spawn at. </span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">localx</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+	
+
+	<span class="kd">public</span> <span class="nf">Obstacle</span><span class="p">(</span><span class="n">Game</span> <span class="n">game</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">game</span><span class="o">=</span> <span class="n">game</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Paint method used to displat the ground.</span>
+	<span class="c1">// Needs an input for the x position as well, since the obstacle shouldn&#39;t always spawn in the same place.</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">paint</span><span class="p">(</span><span class="n">Graphics2D</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">localx</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+		<span class="n">g</span><span class="p">.</span><span class="na">fillRect</span><span class="p">(</span><span class="n">localx</span><span class="p">,</span> <span class="mi">325</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Setting up a collider to detect collision.</span>
+	<span class="kd">public</span> <span class="n">Rectangle</span> <span class="nf">getBounds</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">localx</span><span class="p">,</span> <span class="mi">325</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">);</span>
+	<span class="p">}</span>
+
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Ground-Class">The Ground Class<a class="anchor-link" href="#The-Ground-Class"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">JavaCode</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.awt.Graphics2D</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Rectangle</span><span class="p">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ground</span> <span class="p">{</span>
+
+	<span class="c1">// Rererence to the game object.</span>
+	<span class="kd">private</span> <span class="n">Game</span> <span class="n">game</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+	
+
+	<span class="kd">public</span> <span class="nf">Ground</span><span class="p">(</span><span class="n">Game</span> <span class="n">game</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">game</span><span class="o">=</span> <span class="n">game</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Paint method used to displat the ground.</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">paint</span><span class="p">(</span><span class="n">Graphics2D</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">g</span><span class="p">.</span><span class="na">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="na">getHeight</span><span class="p">()</span> <span class="o">-</span> <span class="mi">30</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="na">getWidth</span><span class="p">(),</span> <span class="mi">30</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Setting up a collider to detect collision.</span>
+	<span class="kd">public</span> <span class="n">Rectangle</span> <span class="nf">getBounds</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="na">getHeight</span><span class="p">()</span> <span class="o">-</span> <span class="mi">30</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="na">getWidth</span><span class="p">(),</span> <span class="n">HEIGHT</span><span class="p">);</span>
+	<span class="p">}</span>
+
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/ADfastpages/2022/09/02/JavaGame.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ADfastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ADfastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ADfastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>My personal blog for notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/ADfastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/ADfastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
