@@ -9,8 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
-
-@SuppressWarnings("serial")
 public class Game extends JPanel {
 
 	// Instantiating the player (ball)
