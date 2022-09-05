@@ -10,5 +10,13 @@ Stuff for cb
 
 [Example Notebook](https://ad1616.github.io/ADfastpages/java/2022/08/24/CoulombLaw.html)
 
+### Unit 2: Using Objects
+
+Linked below are notebooks demonstrating use of and explaining objects in Java.
+
+[Basic anatomy of java](https://ad1616.github.io/ADfastpages/java/2022/08/19/JavaAnatomy.html)
+[Using objects through Coulomb Calculator code example](https://ad1616.github.io/ADfastpages/java/2022/08/24/CoulombLaw.html)
+[Many examples of objects in this basic Game example using Swing and AWT](https://ad1616.github.io/ADfastpages/java/2022/09/03/JavaGame.html)
+
 
 
