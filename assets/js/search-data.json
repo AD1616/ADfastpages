@@ -150,7 +150,7 @@
   
       ,"page1": {
           "title": "Helpful CB Things",
-          "content": "Stuff for cb . Unit 1: Primitive Types . Example Notebook . Unit 2: Using Objects . Linked below are notebooks demonstrating use of and explaining objects in Java. . Basic anatomy of java Using objects through Coulomb Calculator code example Many examples of objects in this basic Game example using Swing and AWT .",
+          "content": "Stuff for cb . Unit 1: Primitive Types . Example Notebook with implementation of primitives . Unit 2: Using Objects . Linked below are notebooks demonstrating use of and explaining objects in Java. . Basic anatomy of java Using objects through Coulomb Calculator code example Many examples of objects in this basic Game example using Swing and AWT Explaining objects and inheritance with basic code example .",
           "url": "https://ad1616.github.io/ADfastpages/cb/",
           "relUrl": "/cb/",
           "date": ""
