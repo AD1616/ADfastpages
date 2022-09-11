@@ -6,6 +6,8 @@ permalink: /cb/
 
 Stuff for cb
 
+docker docker docker
+
 ### Unit 1: Primitive Types
 
 [Example Notebook with implementation of primitives](https://ad1616.github.io/ADfastpages/java/2022/08/24/CoulombLaw.html)
