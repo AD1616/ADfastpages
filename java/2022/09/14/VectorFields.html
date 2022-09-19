@@ -159,7 +159,7 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kt">float</span> <span class="n">k</span><span class="p">;</span>
     
     <span class="kd">public</span> <span class="kt">double</span> <span class="nf">Magnitude</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">k</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
     <span class="p">}</span>
     
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
@@ -231,23 +231,41 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>The Magnitude of the vector at (0, 0) is: 0.0
 Vector Components: 
-0.0  0.0  0.0  The Magnitude of the vector at (0, 1) is: 1.0
+0.0  0.0  0.0  
+
+The Magnitude of the vector at (0, 1) is: 1.0
 Vector Components: 
-0.0  1.0  0.0  The Magnitude of the vector at (0, 2) is: 4.0
+0.0  1.0  0.0  
+
+The Magnitude of the vector at (0, 2) is: 2.0
 Vector Components: 
-0.0  2.0  0.0  The Magnitude of the vector at (1, 0) is: 1.0
+0.0  2.0  0.0  
+
+The Magnitude of the vector at (1, 0) is: 1.0
 Vector Components: 
-1.0  0.0  0.0  The Magnitude of the vector at (1, 1) is: 2.0
+1.0  0.0  0.0  
+
+The Magnitude of the vector at (1, 1) is: 1.4142135623730951
 Vector Components: 
-1.0  1.0  0.0  The Magnitude of the vector at (1, 2) is: 5.0
+1.0  1.0  0.0  
+
+The Magnitude of the vector at (1, 2) is: 2.23606797749979
 Vector Components: 
-1.0  2.0  0.0  The Magnitude of the vector at (2, 0) is: 4.0
+1.0  2.0  0.0  
+
+The Magnitude of the vector at (2, 0) is: 2.0
 Vector Components: 
-2.0  0.0  0.0  The Magnitude of the vector at (2, 1) is: 5.0
+2.0  0.0  0.0  
+
+The Magnitude of the vector at (2, 1) is: 2.23606797749979
 Vector Components: 
-2.0  1.0  0.0  The Magnitude of the vector at (2, 2) is: 8.0
+2.0  1.0  0.0  
+
+The Magnitude of the vector at (2, 2) is: 2.8284271247461903
 Vector Components: 
-2.0  2.0  0.0  </pre>
+2.0  2.0  0.0  
+
+</pre>
 </div>
 </div>
 
