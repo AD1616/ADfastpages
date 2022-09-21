@@ -13,10 +13,10 @@
   
     
         ,"post1": {
-            "title": "Title",
+            "title": "Javascript Demo",
             "content": "console.log(&quot;hello world&quot;); . hello world . var msg = &quot;hello&quot;; console.log(msg); . hello . function add(x1, x2) { var sum = x1 + x2; console.log(sum); } add(5, 6); . 11 . add(19, 37); . 56 . function logItType(output) { console.log(typeof output, &quot;;&quot;, output); } logItType(&quot;hello&quot;); logItType(2020); logItType([1, 2, 3]); . string ; hello number ; 2020 object ; [ 1, 2, 3 ] . var testHTML = &quot;Hello World&quot;; $$.html(testHTML); . Hello World // define a function to hold data for a Person function Person(name, ghID) { this.name = name; this.ghID = ghID; this.group = &quot;&quot;; } // define a setter for role in Person data Person.prototype.setGroup = function(group) { this.group = group; } // define a JSON conversion &quot;method&quot; associated with Person Person.prototype.toJSON = function() { const obj = {name: this.name, ghID: this.ghID, group: this.group}; const json = JSON.stringify(obj); // json/string is useful when passing data on internet return json; } var me = new Person(&quot;Sahil&quot;, &quot;AD1616&quot;); me.setGroup(&quot;Bread&quot;); logItType(me); logItType(me.toJSON()); . object ; Person { name: &#39;Sahil&#39;, ghID: &#39;AD1616&#39;, group: &#39;Bread&#39; } string ; {&#34;name&#34;:&#34;Sahil&#34;,&#34;ghID&#34;:&#34;AD1616&#34;,&#34;group&#34;:&#34;Bread&#34;} .",
-            "url": "https://ad1616.github.io/ADfastpages/2022/09/20/javascriptDemo.html",
-            "relUrl": "/2022/09/20/javascriptDemo.html",
+            "url": "https://ad1616.github.io/ADfastpages/javascript/2022/09/20/javascriptDemo.html",
+            "relUrl": "/javascript/2022/09/20/javascriptDemo.html",
             "date": " • Sep 20, 2022"
         }
         
