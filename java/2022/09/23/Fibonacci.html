@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Base class with Stream Algorithm | AD1616 fastpages</title>
+<title>Fibonacci Algorithms | AD1616 fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Base class with Stream Algorithm" />
+<meta property="og:title" content="Fibonacci Algorithms" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="My personal blog for notebooks." />
-<meta property="og:description" content="My personal blog for notebooks." />
-<link rel="canonical" href="https://ad1616.github.io/ADfastpages/2022/09/23/Fibonacci.html" />
-<meta property="og:url" content="https://ad1616.github.io/ADfastpages/2022/09/23/Fibonacci.html" />
+<meta name="description" content="Returning Fibonacci Sequence in 4 ways." />
+<meta property="og:description" content="Returning Fibonacci Sequence in 4 ways." />
+<link rel="canonical" href="https://ad1616.github.io/ADfastpages/java/2022/09/23/Fibonacci.html" />
+<meta property="og:url" content="https://ad1616.github.io/ADfastpages/java/2022/09/23/Fibonacci.html" />
 <meta property="og:site_name" content="AD1616 fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-09-23T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Base class with Stream Algorithm" />
+<meta property="twitter:title" content="Fibonacci Algorithms" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-23T00:00:00-05:00","datePublished":"2022-09-23T00:00:00-05:00","description":"My personal blog for notebooks.","headline":"Base class with Stream Algorithm","mainEntityOfPage":{"@type":"WebPage","@id":"https://ad1616.github.io/ADfastpages/2022/09/23/Fibonacci.html"},"url":"https://ad1616.github.io/ADfastpages/2022/09/23/Fibonacci.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-23T00:00:00-05:00","datePublished":"2022-09-23T00:00:00-05:00","description":"Returning Fibonacci Sequence in 4 ways.","headline":"Fibonacci Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://ad1616.github.io/ADfastpages/java/2022/09/23/Fibonacci.html"},"url":"https://ad1616.github.io/ADfastpages/java/2022/09/23/Fibonacci.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ADfastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ad1616.github.io/ADfastpages/feed.xml" title="AD1616 fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/ADfastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Base class with Stream Algorithm</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-23T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Fibonacci Algorithms</h1><p class="page-description">Returning Fibonacci Sequence in 4 ways.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-23T00:00:00-05:00" itemprop="datePublished">
         Sep 23, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -83,6 +83,13 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ADfastpages/categories/#java">java</a>
+        
+      
+      </p>
     
 
     
@@ -116,7 +123,12 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Base-class-for-displaying-sequence,-contains-Stream-Algorithm">Base class for displaying sequence, contains Stream Algorithm </a></li>
+<li class="toc-entry toc-h3"><a href="#Class-with-for-loop">Class with for loop </a></li>
+<li class="toc-entry toc-h3"><a href="#Class-with-while-loop">Class with while loop </a></li>
+<li class="toc-entry toc-h3"><a href="#Class-with-recursion">Class with recursion </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -125,6 +137,15 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Base-class-for-displaying-sequence,-contains-Stream-Algorithm">
+<a class="anchor" href="#Base-class-for-displaying-sequence,-contains-Stream-Algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base class for displaying sequence, contains Stream Algorithm<a class="anchor-link" href="#Base-class-for-displaying-sequence,-contains-Stream-Algorithm"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -172,21 +193,21 @@ window.onload = wrap_img;
     <span class="p">}</span>
 
     <span class="cm">/*</span>
-<span class="cm">     This Method should be &quot;abstract&quot;</span>
+<span class="cm">     This Method should be "abstract"</span>
 <span class="cm">     Leave method as protected, as it is only authorized to extender of the class</span>
 <span class="cm">     Make new class that extends and defines init()</span>
 <span class="cm">     Inside references within this class would change from this to super</span>
 <span class="cm">     Repeat process using for, while, recursion</span>
 <span class="cm">     */</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&quot;Stream&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"Stream"</span><span class="p">;</span>
         <span class="n">Stream</span><span class="p">.</span><span class="na">iterate</span><span class="p">(</span><span class="k">new</span> <span class="kt">long</span><span class="o">[]</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[]</span><span class="p">{</span><span class="n">f</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="n">f</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">f</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">})</span>
             <span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">)</span>
             <span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">f</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">f</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span> <span class="p">);</span>
     <span class="p">}</span>
 
     <span class="cm">/*</span>
-<span class="cm">     Number is added to fibonacci sequence, current state of &quot;list&quot; is added to hash for hashID &quot;num&quot;</span>
+<span class="cm">     Number is added to fibonacci sequence, current state of "list" is added to hash for hashID "num"</span>
 <span class="cm">     */</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setData</span><span class="p">(</span><span class="kt">long</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
@@ -211,18 +232,18 @@ window.onload = wrap_img;
 <span class="cm">     Console/Terminal supported print method</span>
 <span class="cm">     */</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Init method = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fibonacci Number &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">size</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getNth</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fibonacci List = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">list</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fibonacci Hashmap = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">hash</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Init method = "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"fibonacci Number "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">size</span> <span class="o">+</span> <span class="s">" = "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getNth</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"fibonacci List = "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">list</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"fibonacci Hashmap = "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">hash</span><span class="p">);</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;fibonacci Sequence &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getNthSeq</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"fibonacci Sequence "</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s">" = "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getNthSeq</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="cm">/*</span>
 <span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
-<span class="cm">    Change this method to  call &quot;main&quot; class of each of the extended classes</span>
+<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
 <span class="cm">     */</span>
     <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">Fibo</span> <span class="n">fib</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fibo</span><span class="p">();</span>
@@ -354,6 +375,15 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Class-with-for-loop">
+<a class="anchor" href="#Class-with-for-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class with for loop<a class="anchor-link" href="#Class-with-for-loop"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -367,7 +397,7 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
     <span class="c1">// The printing and storing of data is preserved</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&quot;For Loop&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"For Loop"</span><span class="p">;</span>
         <span class="c1">// Hardcoding first two numbers, and initializing them in the sequence</span>
         <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -393,6 +423,15 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Class-with-while-loop">
+<a class="anchor" href="#Class-with-while-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class with while loop<a class="anchor-link" href="#Class-with-while-loop"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -406,7 +445,7 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
     <span class="c1">// The printing and storing of data is preserved</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&quot;While Loop&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"While Loop"</span><span class="p">;</span>
         <span class="c1">// Hardcoding first two numbers, and initializing them in the sequence</span>
         <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -434,6 +473,15 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Class-with-recursion">
+<a class="anchor" href="#Class-with-recursion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class with recursion<a class="anchor-link" href="#Class-with-recursion"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -447,7 +495,7 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
     <span class="c1">// The printing and storing of data is preserved</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&quot;Recursion&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"Recursion"</span><span class="p">;</span>
         <span class="c1">// Iterating to show the entire sequence</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
             <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">Recur</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
@@ -488,7 +536,15 @@ fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 
 
 
-  </div><a class="u-url" href="/ADfastpages/2022/09/23/Fibonacci.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="AD1616/ADfastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ADfastpages/java/2022/09/23/Fibonacci.html" hidden></a>
 </article>
 
       </div>
