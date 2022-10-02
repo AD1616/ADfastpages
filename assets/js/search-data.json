@@ -13,7 +13,7 @@
   
     
         ,"post1": {
-            "title": "Fetch of Covid19 data with RapidAPI",
+            "title": "Covid API",
             "content": "Time All-time Cases Recorded Deaths Active Cases . | | | | Country All-time Cases Recorded Deaths Active Cases .",
             "url": "https://ad1616.github.io/ADfastpages/covidAPI",
             "relUrl": "/covidAPI",
