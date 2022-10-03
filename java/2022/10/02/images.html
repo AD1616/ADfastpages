@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      8 min read
     
 </span></p>
 
@@ -329,19 +329,29 @@ window.onload = wrap_img;
             <span class="n">img</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">inFile</span><span class="p">));</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="p">}</span>
+        <span class="kt">double</span> <span class="n">pixVal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="c1">// Changing to go by blocks 3 times as wide as tall</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span> <span class="n">i</span><span class="o">+=</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Changing to go by blocks 2 times as wide as tall</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">Color</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
-                <span class="kt">double</span> <span class="n">pixVal</span> <span class="o">=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.30</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.59</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span>
-                        <span class="p">.</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.11</span><span class="p">)));</span>
-                <span class="k">try</span> <span class="p">{</span>
-                    <span class="n">asciiPrt</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">asciiChar</span><span class="p">(</span><span class="n">pixVal</span><span class="p">));</span>
-                    <span class="n">asciiPrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
-                    <span class="n">asciiWrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">pixVal</span> <span class="o">=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">())))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
                 <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">try</span> <span class="p">{</span>
+                        <span class="n">asciiPrt</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">asciiChar</span><span class="p">(</span><span class="n">pixVal</span><span class="p">));</span>
+                        <span class="n">asciiPrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+                        <span class="n">asciiWrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="p">}</span>
+                    <span class="n">pixVal</span> <span class="o">=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">())))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="kt">double</span> <span class="n">pixVal2</span> <span class="o">=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">())))</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+                    <span class="n">pixVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixVal</span> <span class="o">+</span> <span class="n">pixVal2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+                <span class="p">}</span>
+
             <span class="p">}</span>
             <span class="k">try</span> <span class="p">{</span>
                 <span class="n">asciiPrt</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
@@ -391,6 +401,125 @@ window.onload = wrap_img;
           <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="c1">// Red scale method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">RedScale</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="c1">// Reading file</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">inFile</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+        <span class="c1">// Iterating through all pixels</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// For each pixel, getting RGB contents</span>
+                <span class="kt">int</span> <span class="n">pixel</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="c1">// Creating color object out of RGB contents for easy extraction</span>
+                <span class="n">Color</span> <span class="n">color</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                <span class="c1">// Using color object's methods to get the R, G, and B values for the pixel</span>
+                <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getRed</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getGreen</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getBlue</span><span class="p">();</span>
+                
+                <span class="c1">// Getting an average red color</span>
+                <span class="kt">int</span> <span class="n">redAvg</span> <span class="o">=</span> <span class="n">red</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+                
+                <span class="c1">// Creating a new color object which has G and B as average</span>
+                <span class="c1">// Red is scaled so that it accounts for variations in intensity</span>
+                <span class="c1">// Essentially making it gray and then adding red</span>
+                <span class="n">Color</span> <span class="n">colorRed</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">redAvg</span><span class="p">,</span> <span class="n">redAvg</span><span class="p">);</span>
+
+                <span class="c1">// Setting the pixel's actual RGB content in the image to be the redscaled version.</span>
+                <span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">colorRed</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// Writing the image out</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s">"png"</span><span class="p">,</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">"images/tmp/"</span> <span class="o">+</span> <span class="s">"redLambo"</span> <span class="o">+</span> <span class="s">".png"</span><span class="p">)</span> <span class="p">);</span>
+          <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Green scale method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">GreenScale</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="c1">// Reading file</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">inFile</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+        <span class="c1">// Iterating through all pixels</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// For each pixel, getting RGB contents</span>
+                <span class="kt">int</span> <span class="n">pixel</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="c1">// Creating color object out of RGB contents for easy extraction</span>
+                <span class="n">Color</span> <span class="n">color</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                <span class="c1">// Using color object's methods to get the R, G, and B values for the pixel</span>
+                <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getRed</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getGreen</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getBlue</span><span class="p">();</span>
+                
+                <span class="c1">// Getting an average green color</span>
+                <span class="kt">int</span> <span class="n">greenAvg</span> <span class="o">=</span> <span class="n">green</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+                
+                <span class="c1">// Creating a new color object which has R and B as average</span>
+                <span class="c1">// Green is scaled so that it accounts for variations in intensity</span>
+                <span class="c1">// Essentially making it gray and then adding green</span>
+                <span class="n">Color</span> <span class="n">colorGreen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">greenAvg</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">greenAvg</span><span class="p">);</span>
+
+                <span class="c1">// Setting the pixel's actual RGB content in the image to be the greenscaled version.</span>
+                <span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">colorGreen</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// Writing the image out</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s">"png"</span><span class="p">,</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">"images/tmp/"</span> <span class="o">+</span> <span class="s">"greenLambo"</span> <span class="o">+</span> <span class="s">".png"</span><span class="p">)</span> <span class="p">);</span>
+          <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Blue scale method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">BlueScale</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="c1">// Reading file</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">ImageIO</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">inFile</span><span class="p">));</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+        <span class="c1">// Iterating through all pixels</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// For each pixel, getting RGB contents</span>
+                <span class="kt">int</span> <span class="n">pixel</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="c1">// Creating color object out of RGB contents for easy extraction</span>
+                <span class="n">Color</span> <span class="n">color</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">pixel</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                <span class="c1">// Using color object's methods to get the R, G, and B values for the pixel</span>
+                <span class="kt">int</span> <span class="n">red</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getRed</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">green</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getGreen</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">color</span><span class="p">.</span><span class="na">getBlue</span><span class="p">();</span>
+                
+                <span class="c1">// Getting an average Blue color</span>
+                <span class="kt">int</span> <span class="n">blueAvg</span> <span class="o">=</span> <span class="n">blue</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+                
+                <span class="c1">// Creating a new color object which has R and G as average</span>
+                <span class="c1">// Blue is scaled so that it accounts for variations in intensity</span>
+                <span class="c1">// Essentially making it gray and then adding blue</span>
+                <span class="n">Color</span> <span class="n">colorBlue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">blueAvg</span><span class="p">,</span> <span class="n">blueAvg</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+
+                <span class="c1">// Setting the pixel's actual RGB content in the image to be the bluescaled version.</span>
+                <span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">colorBlue</span><span class="p">.</span><span class="na">getRGB</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// Writing the image out</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s">"png"</span><span class="p">,</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">"images/tmp/"</span> <span class="o">+</span> <span class="s">"blueLambo"</span> <span class="o">+</span> <span class="s">".png"</span><span class="p">)</span> <span class="p">);</span>
+          <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
     <span class="c1">// conversion table, there may be better out there ie https://www.billmongan.com/Ursinus-CS173-Fall2020/Labs/ASCIIArt</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">asciiChar</span><span class="p">(</span><span class="kt">double</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">" "</span><span class="p">;</span>
@@ -420,6 +549,9 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
         <span class="n">Pics</span> <span class="n">lambo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pics</span><span class="p">(</span><span class="s">"lambo"</span><span class="p">,</span> <span class="s">"png"</span><span class="p">);</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">GrayScale</span><span class="p">();</span>
+        <span class="n">lambo</span><span class="p">.</span><span class="na">RedScale</span><span class="p">();</span>
+        <span class="n">lambo</span><span class="p">.</span><span class="na">GreenScale</span><span class="p">();</span>
+        <span class="n">lambo</span><span class="p">.</span><span class="na">BlueScale</span><span class="p">();</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"Original"</span><span class="p">);</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">resize</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">printStats</span><span class="p">(</span><span class="s">"Scaled"</span><span class="p">);</span>
@@ -444,14 +576,6 @@ window.onload = wrap_img;
 <pre>Original: 7768 352x143  images/lambo.png
 Scaled: 11941 116x47  images/tmp/lambo.png
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click &lt;a href='https://aka.ms/vscodeJupyterKernelCrash'&gt;here&lt;/a&gt; for more info. View Jupyter &lt;a href='command:jupyter.viewOutput'&gt;log&lt;/a&gt; for further details.</span></pre>
 </div>
 </div>
 
