@@ -548,6 +548,9 @@ window.onload = wrap_img;
     <span class="c1">// tester/driver</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
         <span class="n">Pics</span> <span class="n">lambo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pics</span><span class="p">(</span><span class="s">"lambo"</span><span class="p">,</span> <span class="s">"png"</span><span class="p">);</span>
+        <span class="n">Pics</span> <span class="n">amog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pics</span><span class="p">(</span><span class="s">"amongus"</span><span class="p">,</span> <span class="s">"png"</span><span class="p">);</span>
+        <span class="n">amog</span><span class="p">.</span><span class="na">resize</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
+        <span class="n">amog</span><span class="p">.</span><span class="na">convertToAscii</span><span class="p">();</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">GrayScale</span><span class="p">();</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">RedScale</span><span class="p">();</span>
         <span class="n">lambo</span><span class="p">.</span><span class="na">GreenScale</span><span class="p">();</span>
