@@ -70,42 +70,26 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    </head>
-    <style>
-        table {
-            border-collapse: collapse;
-            margin: auto;
-        }
-        th {
-            background-color: black;
-            color: white;
-            padding: 10px;
-        }
-        td {
-            padding: 10px;
-            color: black;
-        }
-        td:nth-child(odd) {
-            background-color: black;
-        }
-        td:nth-child(even) {
-            background-color: black;
-        }
-    </style>
+        <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
 
-<body>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-    </table>
+<table>
+  <thead>
+  <tr>
+    <th>Country</th>
+    <th>All-time Cases</th>
+    <th>Recorded Deaths</th>
+    <th>Active Cases</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- generated rows -->
+  </tbody>
+</table>
 
-<script>         
-
+<script>
+const resultContainer = document.getElementById("result");         
 const settings = {
     "async": true,
     "crossDomain": true,
@@ -119,21 +103,23 @@ const settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
     for (var i = 0; i < response.length; i++) {
-        var newDataID= document.createElement("td");
-        newDataID.innerHTML = response[i].id;
-        var newDataName = document.createElement("td");
-        newDataName.innerHTML = response[i].name;
-        $(".data-row").eq(i).append(newDataID)
-        $(".data-row").eq(i).append(newDataName)
+        const tr = document.createElement("tr");
+        const newDataID= document.createElement("td");
+        const newDataName = document.createElement("td");
+
+        console.log(response[i]);
+        console.log(response[i].make);
+        newDataID.innerHTML = response[i].make.id;
+        newDataName.innerHTML = response[i].make.name;
+        tr.appendChild(newDataID);
+        tr.appendChild(newDataName);
+        resultContainer.appendChild(tr);
+
     }
     }
 );
-
 </script>
 
-
-</body>
-</html>
 
       </div>
     </main><footer class="site-footer h-card">
