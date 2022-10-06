@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Covid API | AD1616 fastpages</title>
+<title>NHTSA Car API | AD1616 fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Covid API" />
+<meta property="og:title" content="NHTSA Car API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Testing API through covid data." />
-<meta property="og:description" content="Testing API through covid data." />
-<link rel="canonical" href="https://ad1616.github.io/ADfastpages/covidAPI" />
-<meta property="og:url" content="https://ad1616.github.io/ADfastpages/covidAPI" />
+<meta name="description" content="Testing NHTSA API through fetch" />
+<meta property="og:description" content="Testing NHTSA API through fetch" />
+<link rel="canonical" href="https://ad1616.github.io/ADfastpages/NHTSAapi" />
+<meta property="og:url" content="https://ad1616.github.io/ADfastpages/NHTSAapi" />
 <meta property="og:site_name" content="AD1616 fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-10-02T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Covid API" />
+<meta property="twitter:title" content="NHTSA Car API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-02T00:00:00-05:00","datePublished":"2022-10-02T00:00:00-05:00","description":"Testing API through covid data.","headline":"Covid API","mainEntityOfPage":{"@type":"WebPage","@id":"https://ad1616.github.io/ADfastpages/covidAPI"},"url":"https://ad1616.github.io/ADfastpages/covidAPI"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-02T00:00:00-05:00","datePublished":"2022-10-02T00:00:00-05:00","description":"Testing NHTSA API through fetch","headline":"NHTSA Car API","mainEntityOfPage":{"@type":"WebPage","@id":"https://ad1616.github.io/ADfastpages/NHTSAapi"},"url":"https://ad1616.github.io/ADfastpages/NHTSAapi"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ADfastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ad1616.github.io/ADfastpages/feed.xml" title="AD1616 fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/ADfastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -70,31 +70,11 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- HTML table fragment for page -->
-<table>
+        <table>
   <thead>
   <tr>
-    <th>Time</th>
-    <th>All-time Cases</th>
-    <th>Recorded Deaths</th>
-    <th>Active Cases</th>
-  </tr>
-  </thead>
-  <tbody>
-    <td id="time"></td>
-    <td id="total_cases"></td>
-    <td id="total_deaths"></td>
-    <td id="active_cases"></td>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-  <tr>
-    <th>Country</th>
-    <th>All-time Cases</th>
-    <th>Recorded Deaths</th>
-    <th>Active Cases</th>
+    <th>Make ID</th>
+    <th>Make</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -108,7 +88,7 @@ window.onload = wrap_img;
   const resultContainer = document.getElementById("result");
 
   // prepare fetch options
-  const url = "https://spring.nighthawkcodingsociety.com/api/covid/daily";
+  const url = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json";
 
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -139,37 +119,26 @@ window.onload = wrap_img;
       // valid response will have json data
       response.json().then(data => {
           console.log(data);
-          console.log(data.world_total)
-
-          // World Data
-          document.getElementById("time").innerHTML = data.world_total.statistic_taken_at;
-          document.getElementById("total_cases").innerHTML = data.world_total.total_cases;
-          document.getElementById("total_deaths").innerHTML = data.world_total.total_deaths;
-          document.getElementById("active_cases").innerHTML = data.world_total.active_cases;
+          console.log(data["Results"])
 
           // Country data
-          for (const row of data.countries_stat) {
+          for (const row of data["Results"]) {
             console.log(row);
 
             // tr for each row
             const tr = document.createElement("tr");
             // td for each column
-            const name = document.createElement("td");
-            const cases = document.createElement("td");
-            const deaths = document.createElement("td");
-            const active = document.createElement("td");
+            const makeID = document.createElement("td");
+            const make = document.createElement("td");
 
             // data is specific to the API
-            name.innerHTML = row.country_name;
-            cases.innerHTML = row.cases; 
-            deaths.innerHTML = row.deaths; 
-            active.innerHTML = row.active_cases; 
+            makeID.innerHTML = row["Make_ID"];
+            make.innerHTML = row["Make_Name"]; 
 
             // this build td's into tr
-            tr.appendChild(name);
-            tr.appendChild(cases);
-            tr.appendChild(deaths);
-            tr.appendChild(active);
+            tr.appendChild(makeID);
+            tr.appendChild(make);
+        
 
             // add HTML to container
             resultContainer.appendChild(tr);
