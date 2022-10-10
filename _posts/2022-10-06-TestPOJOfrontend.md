@@ -111,7 +111,7 @@ tags: [javascript]
 
   // Reaction function to likes or jeers user actions
   function reaction(type, put_url, elemID) {
-
+    console.log(put_url);
     // fetch the API
     fetch(put_url, put_options)
     // response is a RESTful "promise" on any successful fetch
