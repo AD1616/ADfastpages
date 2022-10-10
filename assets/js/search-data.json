@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Fetch of Backend Jokes",
-            "content": "Joke HaHa Boohoo .",
-            "url": "https://ad1616.github.io/ADfastpages/data/jokes",
-            "relUrl": "/data/jokes",
+            "title": "Frontend for Like/Dislike Cars",
+            "content": "Car Brand Like Dislike .",
+            "url": "https://ad1616.github.io/ADfastpages/carAPI/review",
+            "relUrl": "/carAPI/review",
             "date": " • Oct 6, 2022"
         }
         
