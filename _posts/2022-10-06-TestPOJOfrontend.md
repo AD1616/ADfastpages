@@ -1,8 +1,8 @@
 ---
-title: Fetch of Backend Jokes
+title: Frontend for Like/Dislike Cars
 layout: default
-description: An introductory example of Frontend talking to Backend Java application serving jokes.  
-permalink: /data/jokes
+description: Example of separating frontend and backend through like/dislike of car brands.
+permalink: /carAPI/review
 tags: [javascript]
 ---
 
@@ -11,9 +11,9 @@ tags: [javascript]
 <table>
   <thead>
   <tr>
-    <th>Joke</th>
-    <th>HaHa</th>
-    <th>Boohoo</th>
+    <th>Car Brand</th>
+    <th>Like</th>
+    <th>Dislike</th>
   </tr>
   </thead>
   <tbody id="result">
