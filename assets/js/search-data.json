@@ -15,8 +15,8 @@
         ,"post1": {
             "title": "2014 Practice Exam MCQ",
             "content": "Final Score . I scored a 39/40. My only mistake was due to a gap in knowledge of data types. . Corrections . Question 4: What is printed as a result of executing the code segment? . int x = 7; int y = 3; if ((x &lt; 10) &amp;&amp; (y &lt; 0)) System.out.println(&quot;Value is: &quot; + x * y); else System.out.println(&quot;Value is: &quot; + x / y); . Value is: 2 . The answer that I put was 2.3333333... . Since 7/3&#39;s true value is that. However, since 7 and 3 are both integers, floating point divison does not occur. Instead, integer division occurs, which means that the number is rounded to 2. The output in the above cell confirms this. . Thus, the output is not . Value is: 2.3333333 . But is instead: . Value is: 2 .",
-            "url": "https://ad1616.github.io/ADfastpages/java/2022/11/06/2014MC.html",
-            "relUrl": "/java/2022/11/06/2014MC.html",
+            "url": "https://ad1616.github.io/ADfastpages/cb/2022/11/06/2014MC.html",
+            "relUrl": "/cb/2022/11/06/2014MC.html",
             "date": " • Nov 6, 2022"
         }
         
