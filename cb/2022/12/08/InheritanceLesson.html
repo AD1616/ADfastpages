@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -234,7 +234,7 @@ window.onload = wrap_img;
     <span class="p">}</span>
     
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning..."</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning left..."</span><span class="p">);</span>
     <span class="p">}</span>
     
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">horn</span> <span class="p">()</span> <span class="p">{</span>
@@ -274,6 +274,9 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gearShift</span> <span class="p">()</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Use the gear selector next to the wheel"</span><span class="p">);</span>
     <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning right..."</span><span class="p">);</span>
+    <span class="p">}</span>
     
     <span class="c1">// Here, we don't fully change the functionality of the existing horn method in the superclass</span>
     <span class="c1">// Instead, we take all of the functionality of the superclass method, and then add on to it</span>
@@ -289,6 +292,7 @@ window.onload = wrap_img;
         <span class="n">modelS</span><span class="p">.</span><span class="na">gas</span><span class="p">();</span>
         <span class="c1">// Using the overridden method</span>
         <span class="n">modelS</span><span class="p">.</span><span class="na">gearShift</span><span class="p">();</span>
+        <span class="n">modelS</span><span class="p">.</span><span class="na">steer</span><span class="p">();</span>
         <span class="c1">// Using the method we added on to</span>
         <span class="n">modelS</span><span class="p">.</span><span class="na">horn</span><span class="p">();</span>
     <span class="p">}</span>
@@ -310,6 +314,7 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Go!
 Use the gear selector next to the wheel
+turning right...
 honking... eugh</pre>
 </div>
 </div>
@@ -419,6 +424,39 @@ honking... eugh</pre>
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// the existing method in the superclass</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gearShift</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Use the stick"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning left..."</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// We use override to change the functionality in the subclass of an existing method in the superclass</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">gearShift</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Use the gear selector next to the wheel"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">steer</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"turning right..."</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
