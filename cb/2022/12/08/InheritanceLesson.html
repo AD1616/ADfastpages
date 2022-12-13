@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -139,6 +139,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Hack-1">Hack 1 </a></li>
 <li class="toc-entry toc-h1"><a href="#Overriding-Methods">Overriding Methods </a></li>
 <li class="toc-entry toc-h1"><a href="#Super-Keyword">Super Keyword </a></li>
+<li class="toc-entry toc-h1"><a href="#Creating-References-Using-Inheritance-Hierarchies">Creating References Using Inheritance Hierarchies </a></li>
 <li class="toc-entry toc-h1"><a href="#Polymorphism">Polymorphism </a></li>
 </ul><!--
 #################################################
@@ -410,6 +411,14 @@ honking... eugh</pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Overriding allows a subclass or child class to provide a specific implementation of a method that has already been provided by a super-classes or parent classes. When a method in a subclass has the same name, same parameters or signature, and same return type (or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in the super-class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Super-Keyword">
 <a class="anchor" href="#Super-Keyword" aria-hidden="true"><span class="octicon octicon-link"></span></a>Super Keyword<a class="anchor-link" href="#Super-Keyword"> </a>
 </h1>
@@ -428,6 +437,29 @@ honking... eugh</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this example child class <strong>TeslaModelS</strong>, the <strong>super</strong> keyword can be found in the constructor and the method horn. When it says, <strong>super(brandName, range, doorNumber, maxSpeed)</strong> in the constructor, the super keyword is used to utilize the super class constructor inside the child class. Next, in the horn() method, <strong>super.horn()</strong> is called. This line utilizes the super keyword to call the method horn() from the parent class Car.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Creating-References-Using-Inheritance-Hierarchies">
+<a class="anchor" href="#Creating-References-Using-Inheritance-Hierarchies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating References Using Inheritance Hierarchies<a class="anchor-link" href="#Creating-References-Using-Inheritance-Hierarchies"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Type Diagram
+It is similar to looking at it like a family tree. A is the superclass, or the head of the family. The descendants are the subclasses.
+So
+public class A
+public class B extends A
+public class C extends B
+A Reference refers to an object of the class, or the object of an inherited class. So an Inheritance Hierarchy can create references</p>
 
 </div>
 </div>
