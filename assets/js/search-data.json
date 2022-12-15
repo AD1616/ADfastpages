@@ -13,10 +13,10 @@
   
     
         ,"post1": {
-            "title": "Title",
-            "content": "",
-            "url": "https://ad1616.github.io/ADfastpages/2022/12/14/InheritanceGrades.html",
-            "relUrl": "/2022/12/14/InheritanceGrades.html",
+            "title": "Unit 10 Work",
+            "content": "Recursion . Method that calls itself. Must have two parts: a base case and a recursive call. . Binary Search . Requires data to be in sorted order to use. . The actual algorithm coninuously halvea data until the value is found . More efficient than linear search. In terms of Big O Notation, it is O(log2n) vs O(n). .",
+            "url": "https://ad1616.github.io/ADfastpages/cb/2022/12/14/Unit10.html",
+            "relUrl": "/cb/2022/12/14/Unit10.html",
             "date": " • Dec 14, 2022"
         }
         
