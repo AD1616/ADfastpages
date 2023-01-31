@@ -1,20 +1,30 @@
----
-title: Frontend for Lights
-layout: default
-description: Async fetch of lights data
-permalink: /api/lights
-tags: [javascript]
----
-
-<div id="data-container"> </div>
-
-<script>
-const url = 'http://localhost:8096/api/lights/';
-
-const response = await fetch(url);
-
-const data = await response.json();
-
-const container = document.getElementById('data-container');
-container.innerHTML = data;
-</script>
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.10.5 (v3.10.5:f377153967, Jun  6 2022, 12:36:10) [Clang 13.0.0 (clang-1300.0.29.30)]"
+  },
+  "orig_nbformat": 4,
+  "vscode": {
+   "interpreter": {
+    "hash": "aee8b7b246df8f9039afb4144a1f6fd8d2ca17a180786b69acc140d282b71a49"
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
