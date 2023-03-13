@@ -1,6 +1,6 @@
 ---
 title: Frontend for Like/Dislike Cars
-layout: default
+layout: base
 description: Example of separating frontend and backend through like/dislike of car brands.
 permalink: /carAPI/review
 tags: [javascript]
