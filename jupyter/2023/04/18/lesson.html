@@ -136,9 +136,6 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Hack-5">Hack 5 </a></li>
 <li class="toc-entry toc-h2"><a href="#Hack-6">Hack 6 </a></li>
-<li class="toc-entry toc-h2"><a href="#Hack-7">Hack 7 </a></li>
-<li class="toc-entry toc-h2"><a href="#Hack-8">Hack 8 </a></li>
-<li class="toc-entry toc-h2"><a href="#Hack-9">Hack 9 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Homework!">Homework! </a></li>
@@ -534,106 +531,6 @@ total: 47
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hack-7">
-<a class="anchor" href="#Hack-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 7<a class="anchor-link" href="#Hack-7"> </a>
-</h2>
-<p>Find the sum of the values on the diagonal of the 2D array. Print the sum.</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test1</span>
-<span class="p">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">},{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span> <span class="p">};</span>
-
-        <span class="c1">//ADD CODE HERE</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hack-8">
-<a class="anchor" href="#Hack-8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 8<a class="anchor-link" href="#Hack-8"> </a>
-</h2>
-<p>Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.</p>
-<p>double23([2, 2]) → true
-double23([3, 3]) → true
-double23([2, 3]) → false</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// code here</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">double23</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-  
-<span class="p">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hack-9">
-<a class="anchor" href="#Hack-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 9<a class="anchor-link" href="#Hack-9"> </a>
-</h2>
-<p>Write a class to count how many of a number <code>n</code> is in a 2d array <code>int[][] x</code></p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// code here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Homework!">
 <a class="anchor" href="#Homework!" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework!<a class="anchor-link" href="#Homework!"> </a>
 </h1>
@@ -654,6 +551,98 @@ double23([2, 3]) → false</p>
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Seating</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">chart</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Seating</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">chart</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span> <span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">chart</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">replace</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">String</span> <span class="n">newName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">chart</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">newName</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">alphabetize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">chart</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">chart</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">compareTo</span><span class="p">(</span><span class="n">chart</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">chart</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
+                    <span class="n">chart</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">chart</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+                    <span class="n">chart</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">temp</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">chart</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">chart</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Seating</span> <span class="n">seating</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Seating</span><span class="p">();</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Sahil"</span><span class="p">);</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Samuel"</span><span class="p">);</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Everitt"</span><span class="p">);</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">"Nathan"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">alphabetize</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">seating</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Seating</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sahil 
+Samuel 
+Everitt 
+
+Nathan 
+Samuel 
+Everitt 
+
+Everitt 
+Nathan 
+Samuel 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
