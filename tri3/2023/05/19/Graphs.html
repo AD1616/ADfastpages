@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -133,6 +133,8 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h3"><a href="#Depth-First-Search">Depth First Search </a></li>
+<li class="toc-entry toc-h3"><a href="#Breadth-First-Search">Breadth First Search </a></li>
+<li class="toc-entry toc-h3"><a href="#Databases-using-graphs">Databases using graphs </a></li>
 </ul>
 </li>
 </ul><!--
@@ -179,7 +181,7 @@ window.onload = wrap_img;
 <h4 id="Bag">
 <a class="anchor" href="#Bag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bag<a class="anchor-link" href="#Bag"> </a>
 </h4>
-<p>First, we must define a Bag class. This is a simple data structure where items can be added and you can iterate through the items.</p>
+<p>First, we must define a Bag class. This is a simple data structure where items can be added and you can iterate through the items. The syntax is not as important as the concept.</p>
 
 </div>
 </div>
@@ -270,6 +272,10 @@ window.onload = wrap_img;
 <a class="anchor" href="#Graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>Graph<a class="anchor-link" href="#Graph"> </a>
 </h4>
 <p>This is the class containing the necessary properties and methods to implement a graph.</p>
+<p>How can you represent a graph using code? Instead of purely trying to visualize it, it's easier to think of what a graph is at its core: a collection of vertices and edges. Furthermore, an edge can be defined by the 2 vertices that it connects.</p>
+<p>There are a few ways to represent a graph. We will be using the <strong>adjacency list</strong> representation. First, we create a simple list of length V, where V is the number of vertices in the graph. This list represents all of the vertices in the graph: the index of 0 represents vertex 0, for example.</p>
+<p>How do we account for edges? The way we do this in this representation is that each index of the list of vertices contains a bag of integers. This bag contains all of the vertices that the vertex at that index is connected to.</p>
+<p><img src="https://github.com/AD1616/ADfastpages/assets/64157584/3219c760-cc53-4d60-8555-eae9f8bff2d3" alt="override"></p>
 
 </div>
 </div>
@@ -286,59 +292,53 @@ window.onload = wrap_img;
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NEWLINE</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"line.separator"</span><span class="p">);</span>
-
+    
+    <span class="c1">// The total number of vertices</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
+    <span class="c1">// The total number of edges</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">E</span><span class="p">;</span>
+    <span class="c1">// declaring an array of bags</span>
     <span class="kd">private</span> <span class="n">Bag</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">adj</span><span class="p">;</span>
 
-
+    <span class="c1">// Graph constructor must include number of vertices</span>
     <span class="kd">public</span> <span class="nf">Graph</span><span class="p">(</span><span class="kt">int</span> <span class="n">V</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">V</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"Number of vertices must be non-negative"</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="na">V</span> <span class="o">=</span> <span class="n">V</span><span class="p">;</span>
+        <span class="c1">// must add all edges after the vertices are initialized</span>
         <span class="k">this</span><span class="p">.</span><span class="na">E</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="c1">// casting is required here. We initialize the array of bags.</span>
         <span class="n">adj</span> <span class="o">=</span> <span class="p">(</span><span class="n">Bag</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="p">)</span> <span class="k">new</span> <span class="n">Bag</span><span class="o">[</span><span class="n">V</span><span class="o">]</span><span class="p">;</span>
+        <span class="c1">// next, we initialize the bag at each index of the array</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">adj</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bag</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
 
-    <span class="kd">public</span> <span class="nf">Graph</span><span class="p">(</span><span class="n">Graph</span> <span class="n">G</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">V</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="na">V</span><span class="p">();</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">E</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="na">E</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">V</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"Number of vertices must be non-negative"</span><span class="p">);</span>
-
-        <span class="n">adj</span> <span class="o">=</span> <span class="p">(</span><span class="n">Bag</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="p">)</span> <span class="k">new</span> <span class="n">Bag</span><span class="o">[</span><span class="n">V</span><span class="o">]</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">adj</span><span class="o">[</span><span class="n">v</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bag</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="na">V</span><span class="p">();</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">reverse</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="p">:</span> <span class="n">G</span><span class="p">.</span><span class="na">adj</span><span class="o">[</span><span class="n">v</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">reverse</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="p">:</span> <span class="n">reverse</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">adj</span><span class="o">[</span><span class="n">v</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-
+    <span class="c1">// get # of vertices</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">V</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">V</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// get # of edges</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">E</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">E</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// error checking method</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">validateVertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="n">V</span><span class="p">)</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"vertex "</span> <span class="o">+</span> <span class="n">v</span> <span class="o">+</span> <span class="s">" is not between 0 and "</span> <span class="o">+</span> <span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
     <span class="p">}</span>
 
 
+    <span class="c1">// method to add an edge.</span>
+    <span class="c1">// To define an edge we need two vertices.</span>
+    <span class="c1">// To implement it, we need to make sure v and w both know they are connected.</span>
+    <span class="c1">// Index v of the adjacency list represents vertex v. The bag at this index contains</span>
+    <span class="c1">// all of the vertices that index v shares an edge with. Therefore, we just have to add</span>
+    <span class="c1">// vertex w to this bag. We must also do the same for vertex w; meaning, we add v to</span>
+    <span class="c1">// the bag at vertex w</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">validateVertex</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
         <span class="n">validateVertex</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
@@ -375,6 +375,7 @@ window.onload = wrap_img;
 
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Example of how to initialize a graph.</span>
         <span class="n">Graph</span> <span class="n">G</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Graph</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
         <span class="n">G</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
         <span class="n">G</span><span class="p">.</span><span class="na">addEdge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -420,6 +421,14 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the output from the above tester method initializes the graph pictured above the class.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -527,6 +536,35 @@ connected
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Breadth-First-Search">
+<a class="anchor" href="#Breadth-First-Search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Breadth First Search<a class="anchor-link" href="#Breadth-First-Search"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Databases-using-graphs">
+<a class="anchor" href="#Databases-using-graphs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Databases using graphs<a class="anchor-link" href="#Databases-using-graphs"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One popular database that utilizes graphs is called Neo4j. I used this while working at the San Diego Supercomputer Center for various kinds of data that could be represented well using graphs.</p>
+<p>Here's an example of how this could be used in relation to something simple like forming CSA groups:</p>
+<p><img src="https://github.com/AD1616/ADfastpages/assets/64157584/2cbbdb8c-79ed-4a63-a184-b410ad8c5d3e" alt="override"></p>
+<p>As you can see, we have a great visualization of nodes and edges(relationships) using this. Also, we can store as many properties as we want within each node and edge. Additionally, we can give nodes and edges labels, which we can then query against using the Cypher query language. The simplest cypher query is pictured, where MATCH(n) RETURN n returns all nodes and edges in the database.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
