@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      11 min read
     
 </span></p>
 
@@ -133,6 +133,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#Graph">Graph </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#Searching-a-Graph">Searching a Graph </a></li>
 <li class="toc-entry toc-h3"><a href="#Depth-First-Search">Depth First Search </a></li>
 <li class="toc-entry toc-h3"><a href="#Breadth-First-Search">Breadth First Search </a></li>
 <li class="toc-entry toc-h3"><a href="#Databases-using-graphs">Databases using graphs </a></li>
@@ -456,6 +457,21 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that the output from the above tester method initializes the graph pictured above the class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Searching-a-Graph">
+<a class="anchor" href="#Searching-a-Graph" aria-hidden="true"><span class="octicon octicon-link"></span></a>Searching a Graph<a class="anchor-link" href="#Searching-a-Graph"> </a>
+</h3>
+<p>There are two common algorithms for searching a graph: Depth First Search and Breadth First Search.</p>
+<p>We will use the term "exploration" of a vertex to mean visiting all of its adjacent vertices.</p>
+<p><strong>BFS</strong>: Explore a vertex completely before picking the next one. The first vertex you visit doesn't matter, but from there you should only explore vertices that you have already visited. In the below image, we first visit 0. We must fully explore 0, so we then visit 1 and 2 since they are connected to 0. Next, we explore 1 since we visited it first after 0, which means we visit vertices 3 and 4. Since we visited vertex 2 second, we fully explore it now and visit 5 and 6. The order of exploration would then be 3, 4, 5, 6 but of course there are no further adjacent vertices to visit.</p>
+<p><strong>DFS</strong>: Again, the first vertex you visit doesn't matter. However, we don't explore this vertex. Instead, we keep on visiting adjacent vertices until there are no more vertices to visit. Then, we backtrack until there is another adjacent vertex to visit. Instead of fully exploring any vertex, we go down the tree (depth first). In the below image, we choose 0 to visit first. We arbitrarily then visit vertex 1. Then, we visit vertex 3 since it is adjacent to vertex 1. Since 3 is not adjacent to any other vertices, we go back to vertex 1 and try to find another adjacent vertex; we visit vertex 4. 4 is not adjacent to any other vertices, so we go back to vertex 1. 1 is not adjacent to any other vertices so we go back to vertex 0. Now, we visit 2, then 5. We then go back to 2 and visit 6. Once we backtrack to 0 and find that there are no more adjacent vertices to explore, we are done.</p>
+<p><img src="https://github.com/AD1616/ADfastpages/assets/64157584/211b78bb-a446-4cbc-92bd-1667c3e85dee" alt="override"></p>
 
 </div>
 </div>
